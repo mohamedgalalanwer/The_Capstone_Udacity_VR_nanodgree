@@ -16,7 +16,7 @@ public class EndLeve : MonoBehaviour {
         if (other.gameObject.CompareTag("Player"))
         {
            
-			if ( GameLogic.score >= 100)
+			if ( GameLogic.score >= 200)
             {
                 UIgameObject.SetActive(true);
 				scoreText.text = "Score : " + GameLogic.score;
