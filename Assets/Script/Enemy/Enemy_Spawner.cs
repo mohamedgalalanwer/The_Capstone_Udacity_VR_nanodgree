@@ -46,7 +46,7 @@ public class Enemy_Spawner : MonoBehaviour {
        for(int i = 0; i <= numberToSpawen; i++)
         {
 
-            spawenPostion = myTransform.position + UnityEngine.Random.insideUnitSphere * 10;
+            spawenPostion = myTransform.position + UnityEngine.Random.insideUnitSphere * 7;
             Instantiate(objectToSpawen, spawenPostion, myTransform.rotation);
         }
     }
