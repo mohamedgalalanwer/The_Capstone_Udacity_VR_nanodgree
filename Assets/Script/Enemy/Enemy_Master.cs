@@ -23,6 +23,21 @@ public class Enemy_Master : MonoBehaviour {
     public bool isOnRoute;
     public bool isNavPuse;
 
+    private AudioSource audio;
+    public  AudioClip callDedectedHealth;
+    public  AudioClip callEventEnemySetNavTarget;
+    public  AudioClip callEventEnemyDie;
+    public  AudioClip callEventEnemyAttack;
+    public  AudioClip callEventEnemyWalking;
+    public  AudioClip callEventEnemyReachedNavTarget;
+    public  AudioClip callEventEnemyLostTarget;
+
+
+    void Start(){
+        audio = GetComponent<AudioSource>();
+    
+    }
+
     public void CallDedectedHealth(int health)
     {
 
@@ -30,6 +45,7 @@ public class Enemy_Master : MonoBehaviour {
         {
 
             EventEnemyDedectHealth(health);
+          
         }
 
     }
@@ -40,7 +56,7 @@ public class Enemy_Master : MonoBehaviour {
         if (EventEnemySetNavTarget != null)
         {
             EventEnemySetNavTarget(targetTransform);
-
+            audio.PlayOneShot(callEventEnemySetNavTarget);
         }
         myTarget = targetTransform;
     }
@@ -50,6 +66,7 @@ public class Enemy_Master : MonoBehaviour {
         if (EventEnemyDie != null)
         {
             EventEnemyDie();
+            audio.PlayOneShot(callEventEnemyDie);
         }
 
 
@@ -60,6 +77,7 @@ public class Enemy_Master : MonoBehaviour {
         if (EventEnemyAttack != null)
         {
             EventEnemyAttack();
+            audio.PlayOneShot(callEventEnemyAttack);
         }
 
 
@@ -70,6 +88,7 @@ public class Enemy_Master : MonoBehaviour {
         if (EventEnemyWalking != null)
         {
             EventEnemyWalking();
+            audio.PlayOneShot(callEventEnemyWalking);
         }
 
 
@@ -79,6 +98,7 @@ public class Enemy_Master : MonoBehaviour {
         if (EventEnemyLostTarget != null)
         {
             EventEnemyLostTarget();
+           
         }
 
         myTarget = null;
@@ -89,6 +109,7 @@ public class Enemy_Master : MonoBehaviour {
         if (EventEnemyRechedNavTarget != null)
         {
             EventEnemyRechedNavTarget();
+
         }
 
 

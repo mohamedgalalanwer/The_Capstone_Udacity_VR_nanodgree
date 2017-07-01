@@ -29,7 +29,10 @@ public class StartNewGame : MonoBehaviour {
         uiCanvas2.SetActive(false);
 
     }
-
+    public void QuitGame(){
+        Application.Quit();
+    
+    }
 
 
     

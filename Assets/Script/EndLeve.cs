@@ -16,7 +16,7 @@ public class EndLeve : MonoBehaviour {
         if (other.gameObject.CompareTag("Player"))
         {
            
-			if ( GameLogic.score >= 200)
+			if ( GameLogic.score >= 500)
             {
                 UIgameObject.SetActive(true);
 				scoreText.text = "Score : " + GameLogic.score;
@@ -28,7 +28,7 @@ public class EndLeve : MonoBehaviour {
 
     IEnumerator WaitAndPrint()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(3f);
 		Application.LoadLevel("Main");
     }
 

@@ -191,8 +191,8 @@ public class Weapon : MonoBehaviour {
         GameObject hitParticalerEffect = (GameObject)Instantiate(hitParticaler, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
         // hitParticalerEffect.transform.SetParent(hit.transform);
        GameObject BulletsImpact = (GameObject)Instantiate(bulletsImpact, hit.point, Quaternion.FromToRotation(Vector3.forward, hit.normal));
-        Destroy(hitParticalerEffect, 4f);
-    Destroy(BulletsImpact, 4f);
+        Destroy(hitParticalerEffect, 2f);
+    Destroy(BulletsImpact, 2f);
 
     }
 //
